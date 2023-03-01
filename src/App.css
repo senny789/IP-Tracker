@@ -2,14 +2,17 @@
   border-right: 1px solid gray;
 }
 .data {
-  min-width: fit-content;
-  width: min-content;
+  width: 90vw;
+  flex-wrap: wrap;
+  right: 2%;
   left: 2%;
 }
 .data > * {
   padding-inline: 1rem;
   font-weight: bold;
+  flex: 1;
 }
+
 .data > * > h2 {
   color: gray;
 }
@@ -24,9 +27,10 @@
 @media (orientation: portrait) {
   /* … */
   .data {
+    width: 80%;
     flex-direction: column;
-    bottom: -60%;
-    left: 10%;
+    bottom: -80%;
+    left: 5%;
   }
   .data > *:not(:last-child) {
     border-right: none;
@@ -34,11 +38,12 @@
 }
 @media (max-width: 40rem) and (orientation: portrait) {
   .data {
-    flex-direction: column;
     bottom: -30%;
-    left: -8%;
+    left: -5%;
+    padding: 2rem;
   }
   .data > * h1 {
     font-size: 1rem;
+    font-weight: bolder;
   }
 }

@@ -103,7 +103,7 @@ function App() {
             &gt;{" "}
           </button>
         </div>
-        <div className="data flex z-10 p-8 w-3/4 min-h-max  rounded-lg absolute -bottom-20  left-1/4 translate-x-16 bg-white">
+        <div className="data flex z-10 p-8  min-h-max  rounded-lg absolute -bottom-20   translate-x-16 bg-white">
           <div>
             <h2> IP Address</h2>
             <h1>{data.ip}</h1>
