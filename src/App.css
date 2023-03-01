@@ -1,0 +1,44 @@
+.data > *:not(:last-child) {
+  border-right: 1px solid gray;
+}
+.data {
+  min-width: fit-content;
+  width: min-content;
+  left: 2%;
+}
+.data > * {
+  padding-inline: 1rem;
+  font-weight: bold;
+}
+.data > * > h2 {
+  color: gray;
+}
+.data > * h1 {
+  font-size: 2rem;
+}
+.leaflet-container {
+  width: 100vw;
+  height: 70vh;
+  z-index: 1;
+}
+@media (orientation: portrait) {
+  /* … */
+  .data {
+    flex-direction: column;
+    bottom: -60%;
+    left: 10%;
+  }
+  .data > *:not(:last-child) {
+    border-right: none;
+  }
+}
+@media (max-width: 40rem) and (orientation: portrait) {
+  .data {
+    flex-direction: column;
+    bottom: -30%;
+    left: -8%;
+  }
+  .data > * h1 {
+    font-size: 1rem;
+  }
+}
