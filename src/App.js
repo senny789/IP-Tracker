@@ -1,5 +1,5 @@
 import "./App.css";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
 const LocationMarker = (props) => {
   const map = useMap();
@@ -51,7 +51,7 @@ function App() {
     })
       .then((res) => res.json())
       .then((dat) => dat.ip);
-    const setInitial = fetch(
+    fetch(
       `https://geo.ipify.org/api/v2/country,city?apiKey=at_bZ4mhAVtW5Sg0sZdef5cGhwqI8j4S&ipAddress=${ip}`,
       {
         method: "GET",
