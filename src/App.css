@@ -24,6 +24,11 @@
   height: 70vh;
   z-index: 1;
 }
+.arrow:hover {
+  background-color: #5b888946;
+  opacity: 0.7;
+  box-shadow: #5b888946 10px 20px 10px 20px;
+}
 @media (orientation: portrait) {
   /* … */
   .data {
