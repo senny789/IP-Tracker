@@ -45,7 +45,7 @@ function LocationMarker({ lat, lon, setData }) {
 }
 function App() {
   const [search, setSearch] = useState("");
-  const [currentPage, setCurrentPage] = useState("location");
+  // const [currentPage, setCurrentPage] = useState("location");
   const [showDetails, setShowDetails] = useState(false);
 
   const [data, setData] = useState({
@@ -72,7 +72,7 @@ function App() {
 
   //location fetch
   useEffect(() => {
-    if (search !== "" && currentPage === "location") {
+    if (search !== "") {
       let timeout = setTimeout(() => {
         fetch(
           `http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=40f8bbe6bdc2ecaf029ad8f6f08286b1`,
@@ -86,7 +86,7 @@ function App() {
 
       return () => clearTimeout(timeout);
     }
-  }, [search, currentPage]);
+  }, [search]);
 
   //city details fetch
   useEffect(() => {
@@ -117,7 +117,7 @@ function App() {
       <div
         className="top pt-10 pb-32 w-full relative bg-blue-400"
         style={{
-          backgroundColor: currentPage === "ip" ? "" : "brown",
+          backgroundColor: "brown",
         }}
       >
         <div
@@ -129,7 +129,7 @@ function App() {
           <div className="absolute text-3xl cursor-default top-1/2">&lt;</div>
         </div>
         <h1 className="text-6xl text-white font-bold text-center">
-          {currentPage === "ip" ? "IP Address Tracker" : "Geo Location"}
+          {"Geo Location"}
         </h1>
 
         <form
@@ -142,11 +142,7 @@ function App() {
           <input
             type="text"
             value={search}
-            placeholder={
-              currentPage === "ip"
-                ? "Search for any IP or Domain"
-                : "Search for any place"
-            }
+            placeholder={"Search for any place"}
             className="rounded-l-xl  p-3 pr-24 "
             onFocus={() => {
               setShowDetails(true);
@@ -179,9 +175,7 @@ function App() {
           )}
         </form>
 
-        {cityDetails && (
-          <InfoCard data={cityDetails} page={currentPage}></InfoCard>
-        )}
+        {cityDetails && <InfoCard data={cityDetails} page={""}></InfoCard>}
         <div
           // onClick={() => {
           //   setCurrentPage((curr) => (curr === "ip" ? "location" : "ip"));
