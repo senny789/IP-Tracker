@@ -75,7 +75,7 @@ function App() {
     if (search !== "") {
       let timeout = setTimeout(() => {
         fetch(
-          `http://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=40f8bbe6bdc2ecaf029ad8f6f08286b1`,
+          `https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=40f8bbe6bdc2ecaf029ad8f6f08286b1`,
           {
             method: "GET",
           }
